@@ -1,0 +1,21 @@
+{
+  "name": "bitstamp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/voxlol/bitstamp-analytics",
+  "authors": [
+    "voxlol <voxlol@outlook.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "epoch": "~0.6.0",
+    "angular": "~1.4.5"
+  }
+}
