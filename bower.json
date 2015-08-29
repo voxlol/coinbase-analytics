@@ -16,6 +16,7 @@
   "dependencies": {
     "underscore": "~1.8.3",
     "epoch": "~0.6.0",
-    "angular": "~1.4.5"
+    "angular": "~1.4.5",
+    "bootstrap": "~3.3.5"
   }
 }
