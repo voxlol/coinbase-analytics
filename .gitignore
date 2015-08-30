@@ -6,3 +6,4 @@ server/data
 !/*.log
 *.log
 .DS_Store
+dist/
