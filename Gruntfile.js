@@ -10,7 +10,7 @@ module.exports = function(grunt){
         // dest: 'dist',
         // ext: '.js'
         files: {
-          'client/js/app.js' : ['client/**/*.coffee', 'client/*.coffee']
+          'client/js/app.js' : ['client/**/*.coffee']
         }
       }
     },
@@ -44,7 +44,7 @@ module.exports = function(grunt){
     // Watch Configuration
     watch: {
       coffee: {
-        files: ['client/**/*.coffee', 'client/*.coffee'],
+        files: ['client/**/*.coffee'],
         tasks: ['coffee']
       },
 
@@ -64,7 +64,7 @@ module.exports = function(grunt){
     // Setup concurrent 
     concurrent: {
       options: {
-        logConcurrentOutput: true,
+        logConcurrentOutput: false,
       },
       tasks: ['nodemon', 'watch']
     },

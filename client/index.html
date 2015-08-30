@@ -22,16 +22,14 @@
 <body ng-app="cb-analytics" ng-controller="MainController">
   <div class="fluid-container">
     <div class="row">
-      <div ng-include="'./app/nav/nav.html'"></div>
+      <div ng-controller="NavController" ng-include="'./app/nav/nav.html'"></div>
     </div> 
 
     <div class="row">
-
+      <div class="col-md-offset-2 col-md-8">
+        <div ng-controller="GraphController" ng-include="'./app/graph/graph.html'"></div>
+      </div>
     </div>
-    
-    
-    <h1>Hi whats up!</h1>
-    <p class="lead">{{greeting}}</p>
   </div>
 </body>
 </html>
