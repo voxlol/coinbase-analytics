@@ -8,3 +8,4 @@ server/data
 .DS_Store
 dist/
 client/js/
+*.css
