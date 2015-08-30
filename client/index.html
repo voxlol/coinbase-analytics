@@ -20,7 +20,18 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body ng-app="cb-analytics" ng-controller="MainController">
-  <h1>Hi whats up!</h1>
-  <p class="lead">{{greeting}}</p>
+  <div class="fluid-container">
+    <div class="row">
+      <div ng-include="'./app/nav/nav.html'"></div>
+    </div> 
+
+    <div class="row">
+
+    </div>
+    
+    
+    <h1>Hi whats up!</h1>
+    <p class="lead">{{greeting}}</p>
+  </div>
 </body>
 </html>
