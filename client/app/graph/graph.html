@@ -1,8 +1,10 @@
 <div class="white" id="graph-container" ng-init="sockets()">
   <h2> Real-time Graph Container </h2>
   <ul>
-    <li ng-repeat="row in data.slice().reverse()">
-      {{row}}
+    <li ng-repeat="row in done.slice().reverse()">
+      <strong>{{row.time}}</strong> <span style="color: yellow;">{{row.price}}</span>   
+      <span ng-class="{'red': row.side === 'sell', 'green': row.side === 'buy'}">{{row.side}}</span>   
+      {{row.reason}} {{row.order_type}} {{row.remaining_size}}
     </li>
   </ul>
 </div>

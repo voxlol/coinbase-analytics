@@ -1,7 +1,7 @@
 angular.module 'cb-analytics'
 .controller 'GraphController', ['$scope', ($scope)->
-  $scope.data = [];
-  window.data = $scope.data
+  $scope.done = []
+  $scope.matched = []
 
   $scope.sockets = () ->
     ws = new WebSocket 'wss://ws-feed.exchange.coinbase.com' # Connect to the coinbase socket
@@ -18,16 +18,24 @@ angular.module 'cb-analytics'
 
       newData = JSON.parse evt.data
       if newData.type == 'done'
-        $scope.data.shift() if $scope.data.length > 50 
-
-        # Data Parsing
-        $scope.data.push(newData)
+        $scope.done.shift() if $scope.done.length > 50 
+        $scope.done.push(formatLiveData(newData))
         $scope.$apply()
+      else if newData.type == 'match'
+
+
 
     ws.onclose = ()->
-    undefined
 
   `function formatLiveData(row){
-    return 
+    return {
+      time: moment(row.time).format('hh:mm:ss.SSS'),
+      price: row.price,
+      reason: row.reason,
+      side: row.side,
+      order_type: row.order_type,
+      remaining_size: row.remaining_size
+    }
   }`
+  undefined
 ]
