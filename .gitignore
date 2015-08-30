@@ -1,3 +1,5 @@
 node_modules/
 bower_components/
 server/data
+!/*.txt
+.DS_Store
