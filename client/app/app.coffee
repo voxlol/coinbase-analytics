@@ -1,2 +1,5 @@
-console.log 'helloo'
-console.log 'this is another test!'
+angular.module 'cb-analytics', []
+# .config ($stateProvider, $urlRouteProvider)->
+#   ''
+.controller 'MainController', ($scope) ->
+  $scope.greeting = "Hello World from Angular!"
