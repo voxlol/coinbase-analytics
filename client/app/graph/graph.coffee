@@ -18,24 +18,37 @@ angular.module 'cb-analytics'
 
       newData = JSON.parse evt.data
       if newData.type == 'done'
-        $scope.done.shift() if $scope.done.length > 50 
-        $scope.done.push(formatLiveData(newData))
+        $scope.done.pop() if $scope.done.length > 50 
+        $scope.done.unshift(formatDoneTrades(newData))
         $scope.$apply()
       else if newData.type == 'match'
-
+        $scope.matched.pop() if $scope.matched.length > 50
+        $scope.matched.unshift(formatMatchedTrades(newData))
+        $scope.$apply()
 
 
     ws.onclose = ()->
 
-  `function formatLiveData(row){
+  `
+  function formatDoneTrades(row){
     return {
       time: moment(row.time).format('hh:mm:ss.SSS'),
-      price: row.price,
+      price: +row.price,
       reason: row.reason,
       side: row.side,
       order_type: row.order_type,
-      remaining_size: row.remaining_size
+      remaining_size: +row.remaining_size
     }
-  }`
+  }
+
+  function formatMatchedTrades(row){
+    return {
+      time: moment(row.time).format('hh:mm:ss.SSS'),
+      price: +row.price,
+      size: +row.size,
+      side: row.side === 'sell' ? 'buy' : 'sell'
+    }
+  }
+  `
   undefined
 ]

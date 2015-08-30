@@ -1,10 +1,61 @@
-<div class="white" id="graph-container" ng-init="sockets()">
-  <h2> Real-time Graph Container </h2>
-  <ul>
-    <li ng-repeat="row in done.slice().reverse()">
-      <strong>{{row.time}}</strong> <span style="color: yellow;">{{row.price}}</span>   
-      <span ng-class="{'red': row.side === 'sell', 'green': row.side === 'buy'}">{{row.side}}</span>   
-      {{row.reason}} {{row.order_type}} {{row.remaining_size}}
-    </li>
-  </ul>
+<div id="graph-container" ng-init="sockets()">
+  <div class="col-md-6">
+    <h2> Finished Trades </h2>
+
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Finished(done) Trades</div>
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Time</td>
+            <td>Price</td>
+            <td>Side</td>
+            <td>Reason</td>
+            <td>OrderType</td>
+            <td>Remaining Size</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in done">
+            <td>{{row.time}}</td>
+            <td>{{row.price}}</td>
+            <td>{{row.side}}</td>
+            <td>{{row.reason}}</td>
+            <td>{{row.order_type}}</td>
+            <td>{{row.remaining_size}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h2> Matched Trades </h2>
+
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Finished(done) Trades</div>
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Time</td>
+            <td>Price</td>
+            <td>Side</td>
+            <td>Size</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in done">
+            <td>{{row.time}}</td>
+            <td>{{row.price}}</td>
+            <td>{{row.side}}</td>
+            <td>{{row.size}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
