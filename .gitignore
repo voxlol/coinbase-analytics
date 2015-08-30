@@ -7,3 +7,4 @@ server/data
 *.log
 .DS_Store
 dist/
+client/js/
