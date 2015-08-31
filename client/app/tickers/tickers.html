@@ -1,0 +1,61 @@
+<div id="graph-container" ng-init="sockets()">
+  <div class="col-md-6">
+    <h2> Finished Trades </h2>
+
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <!-- <div class="panel-heading">Finished(done) Trades</div> -->
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr class="labels">
+            <td>Time</td>
+            <td>Price</td>
+            <td>Side</td>
+            <td>Reason</td>
+            <td>OrderType</td>
+            <td>Remaining Size</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in done">
+            <td>{{row.time}}</td>
+            <td class="yellow">{{row.price}}</td>
+            <td ng-class="{green: row.side === 'buy', red: row.side === 'sell'}">{{row.side}}</td>
+            <td>{{row.reason}}</td>
+            <td>{{row.order_type}}</td>
+            <td>{{row.remaining_size}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h2> Matched Trades </h2>
+
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <!-- <div class="panel-heading">Finished(done) Trades</div> -->
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr class="labels">
+            <td>Time</td>
+            <td>Price</td>
+            <td>Side</td>
+            <td>Size</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in matched">
+            <td>{{row.time}}</td>
+            <td class="yellow">{{row.price}}</td>
+            <td ng-class="{green: row.side === 'buy', red: row.side === 'sell'}">{{row.side}}</td>
+            <td>{{row.size}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
