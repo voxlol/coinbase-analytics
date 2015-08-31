@@ -2,6 +2,8 @@ angular.module 'cb-analytics'
 .controller 'TickersController', ['$scope', ($scope)->
   $scope.done = []
   $scope.matched = []
+  window.matched = $scope.matched
+  window.done = $scope.done
 
   $scope.sockets = () ->
     ws = new WebSocket 'wss://ws-feed.exchange.coinbase.com' # Connect to the coinbase socket

@@ -20,6 +20,7 @@
     "bootstrap": "~3.3.5",
     "d3": "~3.5.6",
     "moment": "~2.10.6",
-    "TechanJS": "andredumas/techan.js#~0.5.0"
+    "TechanJS": "andredumas/techan.js#~0.5.0",
+    "Chart.js": "~1.0.2"
   }
 }
