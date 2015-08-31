@@ -1,6 +1,6 @@
 angular.module 'cb-analytics'
 .service 'Graphs', ['$http', ($http) ->
-  @.tradeGraph = () ->
+  @tradeGraph = () ->
     margin = 
       top: 20
       right: 20
@@ -24,12 +24,8 @@ angular.module 'cb-analytics'
     accessor = close.accessor()
     data = data.slice(0, 200).map((d) ->
       {
-        date: parseDate(d.Date)
-        open: +d.Open
-        high: +d.High
-        low: +d.Low
+        date: parseDate(d.time)
         close: +d.Close
-        volume: +d.Volume
       }
     ).sort((a, b) ->
       d3.ascending accessor.d(a), accessor.d(b)
@@ -40,4 +36,5 @@ angular.module 'cb-analytics'
     svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0,' + height + ')').call xAxis
     svg.append('g').attr('class', 'y axis').call(yAxis).append('text').attr('transform', 'rotate(-90)').attr('y', 6).attr('dy', '.71em').style('text-anchor', 'end').text 'Price ($)'
     return
+  window.draw = @tradeGraph
 ]

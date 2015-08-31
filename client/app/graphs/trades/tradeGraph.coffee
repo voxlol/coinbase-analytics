@@ -1,4 +1,4 @@
 angular.module 'cb-analytics'
-.controller 'TradeGraphController', ['$scope', 'Graph', ($scope, Graph)->
+.controller 'TradeGraphController', ['$scope', 'Graphs', ($scope, Graphs)->
 
 ]
