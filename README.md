@@ -1,6 +1,9 @@
 # coinbase-analytics
-Bitcoin simulator and analytics
+Bitcoin simulator and analytics.
 
 # Installation
-```npm install
-bower install```
+```npm install```
+```bower install```
+
+# Usage
+```grunt```
