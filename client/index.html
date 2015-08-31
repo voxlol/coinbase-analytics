@@ -11,6 +11,7 @@
   <script src="/scripts/d3/d3.js"></script>
   <script src="/scripts/epoch/epoch.min.js"></script>
   <script src="/scripts/moment/min/moment.min.js"></script>
+  <script src="/scripts/TechanJS/dist/techan.min.js"></script>
 
   <!-- Project loads -->
   <script src="/js/app.js"></script>
@@ -22,13 +23,21 @@
 </head>
 <body ng-app="cb-analytics" ng-controller="MainController">
   <div class="fluid-container">
+    <!-- Nav -->
     <div class="row">
       <div ng-controller="NavController" ng-include="'./app/nav/nav.html'"></div>
     </div> 
 
+    <!-- Trade Graph -->
     <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <div ng-controller="GraphController" ng-include="'./app/graph/graph.html'"></div>
+      <div ng-controller="TradeGraphController" ng-include="'./app/graphs/trades/tradeGraph.html'"></div>
+    </div> 
+    
+
+    <!-- tickers -->
+    <div class="row">
+      <div class="col-md-12">
+        <div ng-controller="TickersController" ng-include="'./app/tickers/tickers.html'"></div>
       </div>
     </div>
   </div>
